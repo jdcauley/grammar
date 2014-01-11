@@ -3,8 +3,16 @@ module.exports.routes = {
     view: 'home/index'
   },
  
-  'get /public/images/*': {
-    controller: 'FileController',
+  'get /uploads/*': {
+    controller: 'FilesController',
+    action: 'get'
+  },
+  'get /assets/images/photos/*': {
+    controller: 'FilesController',
+    action: 'get'
+  },
+  'get /assets/uploads/photos/*': {
+    controller: 'FilesController',
     action: 'get'
   }
 };

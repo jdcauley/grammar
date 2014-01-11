@@ -12,7 +12,7 @@
     "sails-s3": "0.0.3",
     "sails-mongo": "~0.9.6",
     "sails-memory": "~0.9.1",
-    "file-parser": "0.0.3"
+    "fs-extra": "~0.8.1"
   },
   "scripts": {
     "start": "node app.js",
@@ -23,7 +23,5 @@
   "author": "",
   "license": "",
   "devDependencies": {
-    "mkdirp": "~0.3.5",
-    "shortid": "~2.0.0"
   }
 }

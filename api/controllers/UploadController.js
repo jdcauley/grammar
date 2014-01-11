@@ -3,7 +3,7 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 //var io = require('socket.io');
  
-var UPLOAD_PATH = 'public/images';
+var UPLOAD_PATH = 'uploads';
  
 // Setup id generator
 sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
@@ -38,7 +38,7 @@ function processImage(id, name, path, cb) {
  
 module.exports = {
 
-  create: function (req, res, next) {
+  create: function (req, res) {
   
   
     var file = req.files.media,
@@ -66,9 +66,8 @@ module.exports = {
                 res.json(err);
               } else {
                 
-                Upload.create(req.param('medialurl'), function uploadFile (err, murl) {
-                  var mediaurl = data;
-                });
+                  
+                  res.json(data);
                 
               }
             });
@@ -77,7 +76,9 @@ module.exports = {
       }
     });
   Upload.create(req.params.all(), function uploadCreated (err, upload) {
-    
+  
+    var medialurl = processImage('cb')
+    /*
     if (err) {
         console.log(err);
         req.session.flash = {
@@ -95,7 +96,7 @@ module.exports = {
       
       // res.json(user);
       res.json(upload);
-    
+      */
     
   });
   },
